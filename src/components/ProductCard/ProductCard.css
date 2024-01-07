@@ -1,0 +1,21 @@
+.product-card{
+    border: 2px solid var(--overlay-color-1);
+}
+
+.product-card:hover{
+    border: 2px solid var(--text-color-1);
+}
+
+.product-card-img{
+    height: 210px;
+    width: 210px;
+}
+
+.product-card-content{
+    padding: 10px;
+}
+
+.product-card-content p{
+    margin-top: 15px;
+}
+

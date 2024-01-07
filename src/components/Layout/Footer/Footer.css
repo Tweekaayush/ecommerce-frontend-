@@ -1,0 +1,118 @@
+footer{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    height: 80vh;
+    width: 100%;
+    background-color: var(--bg-color-3);
+}
+
+/* ------------------ Upper footer ------------------ */
+
+.upper-footer{
+    flex: 1;
+    padding: 0 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.upper-footer-content{
+    width: 976px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+.upper-footer-content p{
+    flex: 1;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.8;
+}
+
+.upper-footer-content form{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.upper-footer-content form input[type='email']{
+    font-size: 18px;
+    border: 1px solid var(--overlay-color-1);
+    padding: 8px 16px;
+    border-radius: 15px 0 0 15px;
+}
+
+.upper-footer-content form input[type='email']:focus{
+    outline: none;
+}
+
+.upper-footer-content form input[type='submit']{
+    font-size: 18px;
+    padding: 8px 16px;
+    text-transform: uppercase;
+    border: none;
+    border: 1px solid var(--button-color-1);
+    background-color: var(--button-color-1);
+    color: var(--white-color);
+    border-radius: 0 15px 15px 0;
+}
+
+/* ------------------ Middle footer ------------------ */
+
+.middle-footer{
+    flex: 2.5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 24px;
+}
+
+.middle-footer-content{
+    width: 976px;
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+}
+
+.middle-footer-content div ul{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    list-style: none;
+}
+
+.middle-footer-content div ul li a{
+    text-decoration: none;
+    color: var(--text-color-2);
+    font-weight: 500;
+}
+
+.middle-footer-content div:last-child ul{
+    flex-direction: row;
+}
+
+.footer-link-heading{
+    font-size: 20px;
+    margin-bottom: 32px;
+    text-transform: capitalize;
+    font-weight: 600;
+}
+
+
+
+
+/* ------------------ Lower footer ------------------ */
+
+.lower-footer{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 24px;
+    color: var(--white-color);
+    background-color: var(--text-color-1);
+}

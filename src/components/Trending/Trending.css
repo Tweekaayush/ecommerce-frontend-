@@ -1,0 +1,48 @@
+#trending{
+    min-height: 60vh;
+    background-color: var(--bg-color-4);
+}
+
+.trending-container{
+    display: flex;
+    flex-direction: column;
+}
+
+.trending-upper-container{
+    display: flex;
+    justify-content: space-between;
+}
+
+.trending-lower-container{
+    display: flex;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    white-space: nowrap;
+    gap: 18px;
+    padding: 32px 0 0 0;
+}
+
+.trending-heading{
+    font-size: 24px;
+    font-weight: bold;
+    border-bottom: 4px solid var(--button-color-1);
+}
+
+.trending-navigator{
+    display: flex;
+    gap: 10px;
+}
+
+.trending-navigator svg{
+    font-size: 18px;
+    padding: 10px;
+    background-color: var(--text-color-1);
+    color: var(--white-color);
+}
+
+.trending-lower-container::-webkit-scrollbar {
+    display: none;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}

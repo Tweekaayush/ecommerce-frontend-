@@ -1,38 +1,76 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Blinker:wght@100;200;300;400;600;700;800;900&family=Montserrat:wght@400;700&family=Poppins:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+:root{
+    --bg-color-1: #F0DFD8;
+    --bg-color-2: #F6F7F9;
+    --bg-color-3: #F8F3F0;
+    --button-color-1: #D5977E;
+    --text-color-1: #222222;
+    --text-color-2: #5E5A5A;
+    --white-color: #ffffff;
+    --overlay-color-1: rgba(0, 0, 0, 0.3);
+    --overlay-color-2: rgba(0, 0, 0, 0.5);
+
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.resize-animation-stopper * {
+    transition: none !important;
+}
+  
+html{
+    font-family: 'Montserrat', sans-serif;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/* --------------- Section -------------- */
+
+section{
+    position: relative;
+    min-height: 85vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 30px;
 }
 
-.App-link {
-  color: #61dafb;
+.container{
+    position: relative;
+    width: 1140px;
+    height: 100%;
+    margin: 0 auto;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.section-btn{
+    font-size: 18px;
+    text-decoration: none;
+    background-color: var(--button-color-1);
+    color: var(--white-color);
+    margin-top: 24px;
+    padding: 16px 32px;
+    align-self: start;
+}
+
+@media screen and (max-width:1200px) {
+
+    section{
+        padding: 80px 16px;
+    }
+
+    .container{
+        width: 976px;
+    }
+}
+
+@media screen and (max-width:1024px) {
+    .container{
+        width: 100%;
+    }
 }

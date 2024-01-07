@@ -1,0 +1,89 @@
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    width: 100%;
+    padding: 0 30px;
+    position: absolute;
+    z-index: 999;
+}
+
+.nav-brand{
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 24px;
+    text-transform: uppercase;
+    color: var(--main-color);
+    padding: 7px 0;
+}
+
+.search-bar{
+    flex: 1;
+    display: none;
+    justify-content: center;
+}
+
+.search-bar input[type='text']{
+    font-size: 18px;
+    border: 0;
+    border-radius: 15px 0 0 15px;
+    padding: 8px 12px;
+    width: 60%;
+}
+
+.search-bar input[type='submit']{
+    font-size: 18px;
+    border: 0;
+    border-radius: 0 15px 15px 0;
+    padding: 8px 12px;
+}
+
+.nav-links{
+    display: flex;
+    list-style: none;
+    gap: 24px;
+}
+
+.nav-item svg{
+    position: relative;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 7px 0;
+    color: var(--text-color-1);
+}
+
+.nav-toggler{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    display: none;
+}
+
+.nav-toggler div{
+    background-color: var(--text-color-1);
+    width: 32px;
+    height: 4px;
+    transition: all 0.3s;
+    border-radius: 5px;
+}
+
+.toggle .line1{
+    transform: rotate(45deg) translate(3px,8px);
+
+}
+
+.toggle .line2{
+    opacity: 0;
+}
+
+.toggle .line3{
+    transform: rotate(-45deg) translate(4px, -8px);
+}
+
+
+@media screen and (max-width: 1200px) {
+    nav{
+        padding: 0 16px;
+    }
+}
