@@ -11,7 +11,7 @@ const Hero = () => {
                     <div className="hero-headings">
                         <h3>Lorem, ipsum dolor.</h3>
                         <h1>Lorem, ipsum.</h1>
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ullam itaque ducimus amet facilis. Dicta debitis sit nam, non autem suscipit.</p>
+                        <p className='body-text'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ullam itaque ducimus amet facilis. Dicta debitis sit nam, non autem suscipit.</p>
                     </div>
                     <a href="/" className='section-btn'>See Collections!</a>
                 </div>

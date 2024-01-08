@@ -6,10 +6,10 @@ const CategoryBar = () => {
     <section id="category-bar">
         <div className="container">
             <div className="category-bar-container">
-                <p>Category1</p>
-                <p>Category2</p>
-                <p>Category3</p>
-                <p>Category4</p>
+                <p>Category</p>
+                <p>Category</p>
+                <p>Category</p>
+                <p>Category</p>
             </div>
         </div>
     </section>

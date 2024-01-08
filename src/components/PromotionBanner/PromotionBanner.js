@@ -12,7 +12,7 @@ const PromotionBanner = () => {
                 </div>
                 <div className="promotion-right-container">
                     <h1>Heading</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate itaque earum temporibus numquam nisi nobis.</p>
+                    <p className='body-text'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate itaque earum temporibus numquam nisi nobis.</p>
                     <a href="/" className='section-btn'>Shop Now</a>
                 </div>
             </div>

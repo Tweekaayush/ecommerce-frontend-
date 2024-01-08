@@ -1,4 +1,6 @@
 import React, {useState} from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {faTwitter, faFacebook, faPinterest, faInstagram} from '@fortawesome/free-brands-svg-icons'
 import './Footer.css'
 
 const Footer = () => {
@@ -56,16 +58,24 @@ const Footer = () => {
             <h2 className='footer-link-heading'>Keep in touch</h2>
             <ul>
               <li>
-                <a href="/">IN</a>
+                <a href="/">
+                  <FontAwesomeIcon icon={faTwitter} />
+                </a>
               </li>
               <li>
-                <a href="/">FB</a>
+                <a href="/">
+                  <FontAwesomeIcon icon={faFacebook} />
+                </a>
               </li>
               <li>
-                <a href="/">GH</a>
+                <a href="/">
+                  <FontAwesomeIcon icon={faInstagram} />
+                </a>
               </li>
               <li>
-                <a href="/">LN</a>
+                <a href="/">
+                  <FontAwesomeIcon icon={faPinterest} /> 
+                </a>
               </li>
             </ul>
           </div>

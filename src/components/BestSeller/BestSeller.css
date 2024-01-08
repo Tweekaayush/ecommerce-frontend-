@@ -1,0 +1,33 @@
+.bestSeller-container{
+    display: flex;
+    flex-direction: column;
+}
+
+.bestSeller-container h1{
+    align-self: center;
+}
+
+.bestSeller-list{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    padding: 32px 0 0 0;
+}
+
+.bestSeller-list::-webkit-scrollbar {
+    display: none;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+@media screen and (max-width:768px) {
+    .bestSeller-list{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media screen and (max-width:480px) {
+    .bestSeller-list{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

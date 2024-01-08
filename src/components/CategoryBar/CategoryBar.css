@@ -1,5 +1,5 @@
 #category-bar{
-    min-height: 15vh;
+    min-height: 10vh;
     width: 100%;
     padding: 0 19px;
     background-color: var(--bg-color-2);
@@ -15,4 +15,5 @@
 
 .category-bar-container p{
     font-weight: 700;
+    text-transform: uppercase;
 }

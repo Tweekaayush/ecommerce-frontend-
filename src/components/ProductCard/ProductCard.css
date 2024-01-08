@@ -6,9 +6,17 @@
     border: 2px solid var(--text-color-1);
 }
 
+.product-card-head{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .product-card-img{
-    height: 210px;
     width: 210px;
+}
+.product-card2-img{
+    width: 100%;
 }
 
 .product-card-content{

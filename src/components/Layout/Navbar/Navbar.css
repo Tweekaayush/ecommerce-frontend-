@@ -1,42 +1,28 @@
 nav{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     height: 80px;
     width: 100%;
     padding: 0 30px;
-    position: absolute;
-    z-index: 999;
+    position: fixed;
+    z-index: 997;
+    transition: all 0.3s;
+}
+
+.nav-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 1140px;
 }
 
 .nav-brand{
     text-decoration: none;
-    font-weight: 700;
+    font-weight: 900;
     font-size: 24px;
     text-transform: uppercase;
     color: var(--main-color);
-    padding: 7px 0;
-}
-
-.search-bar{
-    flex: 1;
-    display: none;
-    justify-content: center;
-}
-
-.search-bar input[type='text']{
-    font-size: 18px;
-    border: 0;
-    border-radius: 15px 0 0 15px;
-    padding: 8px 12px;
-    width: 60%;
-}
-
-.search-bar input[type='submit']{
-    font-size: 18px;
-    border: 0;
-    border-radius: 0 15px 15px 0;
-    padding: 8px 12px;
 }
 
 .nav-links{
@@ -45,45 +31,58 @@ nav{
     gap: 24px;
 }
 
+.nav-item{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
 .nav-item svg{
     position: relative;
-    text-decoration: none;
-    font-size: 18px;
-    padding: 7px 0;
+    font-size: 16px;
     color: var(--text-color-1);
 }
 
-.nav-toggler{
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-    display: none;
+.nav-item p{
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--text-color-1);
 }
-
-.nav-toggler div{
-    background-color: var(--text-color-1);
-    width: 32px;
-    height: 4px;
-    transition: all 0.3s;
-    border-radius: 5px;
-}
-
-.toggle .line1{
-    transform: rotate(45deg) translate(3px,8px);
-
-}
-
-.toggle .line2{
-    opacity: 0;
-}
-
-.toggle .line3{
-    transform: rotate(-45deg) translate(4px, -8px);
-}
-
 
 @media screen and (max-width: 1200px) {
     nav{
         padding: 0 16px;
     }
+    .nav-container{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:768px) {
+    .nav-item p{
+        display: none;
+    }
+}
+
+@media screen and (max-width:480px){
+    .nav-brand{
+        font-size: 20px;
+    }
+}
+
+
+.scrolled{
+    background-color: var(--button-color-1);
+    box-shadow: var(--overlay-color-1) 0px 10px 10px -10px;
+}
+
+.scrolled .nav-container ul li svg, .scrolled .nav-container ul li p, .scrolled .nav-container .nav-brand{
+    color: var(--white-color);
+}
+
+.page-overlay-active{
+    display: block !important;
 }

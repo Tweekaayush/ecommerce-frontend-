@@ -3,7 +3,7 @@ import './ProductCard.css'
 import img from '../../assets/images/products/1.jpg'
 import { useNavigate } from 'react-router-dom'
 
-const ProductCard = () => {
+const ProductCard2 = () => {
 
   const navigate = useNavigate();
   const linkTo = () =>{
@@ -14,7 +14,7 @@ const ProductCard = () => {
   return (
     <div className="product-card" onClick={linkTo}>
       <div className="product-card-head">
-        <img src={img} alt="" className='product-card-img'/>
+        <img src={img} alt="" className='product-card2-img'/>
       </div>
       <div className="product-card-content">
             <h3>Product Title</h3>
@@ -24,4 +24,4 @@ const ProductCard = () => {
   )
 }
 
-export default ProductCard
+export default ProductCard2

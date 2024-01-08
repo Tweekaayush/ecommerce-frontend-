@@ -1,0 +1,15 @@
+.slider-container{
+    display: flex;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    white-space: nowrap;
+    gap: 18px;
+    padding: 32px 0 0 0;
+}
+
+.slider-container::-webkit-scrollbar {
+    display: none;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}

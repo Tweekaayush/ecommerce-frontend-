@@ -5,20 +5,21 @@ footer{
     height: 80vh;
     width: 100%;
     background-color: var(--bg-color-3);
+    margin-top: 80px;
 }
 
 /* ------------------ Upper footer ------------------ */
 
 .upper-footer{
     flex: 1;
-    padding: 0 24px;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 60px 30px 15px 30px;
 }
 
 .upper-footer-content{
-    width: 976px;
+    width: 1140px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -27,9 +28,10 @@ footer{
 
 .upper-footer-content p{
     flex: 1;
-    font-size: 20px;
+    font-size: 24px;
     font-weight: 600;
-    line-height: 1.8;
+    line-height: 1.5;
+    color: var(--text-color-1);
 }
 
 .upper-footer-content form{
@@ -40,10 +42,9 @@ footer{
 }
 
 .upper-footer-content form input[type='email']{
-    font-size: 18px;
+    font-size: 20px;
     border: 1px solid var(--overlay-color-1);
     padding: 8px 16px;
-    border-radius: 15px 0 0 15px;
 }
 
 .upper-footer-content form input[type='email']:focus{
@@ -51,14 +52,12 @@ footer{
 }
 
 .upper-footer-content form input[type='submit']{
-    font-size: 18px;
+    font-size: 20px;
     padding: 8px 16px;
-    text-transform: uppercase;
-    border: none;
+    text-transform: capitalize;
     border: 1px solid var(--button-color-1);
     background-color: var(--button-color-1);
     color: var(--white-color);
-    border-radius: 0 15px 15px 0;
 }
 
 /* ------------------ Middle footer ------------------ */
@@ -68,14 +67,14 @@ footer{
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0 24px;
+    padding: 15px 30px 60px 30px;
 }
 
 .middle-footer-content{
-    width: 976px;
+    width: 1140px;
     display: flex;
     justify-content: space-between;
-    align-items: start;
+    align-items: flex-start;
 }
 
 .middle-footer-content div ul{
@@ -89,6 +88,14 @@ footer{
     text-decoration: none;
     color: var(--text-color-2);
     font-weight: 500;
+    font-size: 18px;
+}
+
+.middle-footer-content div ul li a svg{
+    text-decoration: none;
+    color: var(--text-color-1);
+    font-weight: 500;
+    font-size: 18px;
 }
 
 .middle-footer-content div:last-child ul{
@@ -96,10 +103,11 @@ footer{
 }
 
 .footer-link-heading{
-    font-size: 20px;
+    font-size: 24px;
     margin-bottom: 32px;
     text-transform: capitalize;
     font-weight: 600;
+    color: var(--text-color-1);
 }
 
 
@@ -112,7 +120,64 @@ footer{
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0 24px;
+    padding: 0 30px;
     color: var(--white-color);
     background-color: var(--text-color-1);
+}
+
+
+@media screen and (max-width:1200px) {
+
+    .upper-footer-content{
+        width: 976px;
+    }
+    .middle-footer-content{
+        width: 976px;
+    }
+}
+
+@media screen and (max-width:1024px) {
+
+    .upper-footer{
+        padding-inline: 16px ;
+    }
+    .middle-footer{
+        padding-inline: 16px ;
+    }
+    .lower-footer{
+        padding-inline: 16px ;
+    }
+
+
+    .upper-footer-content{
+        width: 100%;
+    }
+    .middle-footer-content{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:768px) {
+    .upper-footer-content{
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .middle-footer-content{
+        text-align: center;
+    }
+
+    .upper-footer-content p{
+        margin-bottom: 24px;
+    }
+}
+
+@media screen and (max-width:480px) {
+    .upper-footer-content form{
+        flex-direction: column;
+    }
+
+    .upper-footer-content form input[type='submit']{
+        flex: 1;
+    }
 }
