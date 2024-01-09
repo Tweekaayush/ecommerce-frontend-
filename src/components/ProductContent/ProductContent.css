@@ -1,3 +1,6 @@
+#product{
+    padding-top: 90px;
+}
 .product-container{
     display: flex;
     justify-content: center;
@@ -10,6 +13,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 32px 0;
 }
 
 .product-img-display{
@@ -40,7 +44,7 @@
 .product-img-item{
     height: 100px;
     width: 100px;
-    border: 2px solid var(--button-color-1);
+    border: 2px solid var(--overlay-color-1);
 }
 
 .product-right-container{
@@ -49,7 +53,7 @@
     padding: 32px 16px;
     width: 50%;
     height: inherit;
-    background-color: var(--bg-color-2);
+    background-color: var(--bg-color-3);
 }
 
 .product-heading{
@@ -61,6 +65,7 @@
     padding:  0 0 10px 0;
     border-bottom: 2px solid var(--overlay-color-1);
     margin-bottom: 32px;
+    font-weight: 700;
 }
 
 .product-right-container > p{
@@ -73,33 +78,70 @@
 
 .product-quantity-container{
     display: flex;
+    justify-content: center;
     margin-bottom: 32px;
+    width: 30%;
 }
 
 
 .product-quantity-container button{
-    width: 55px;
-    height: 55px;
+    flex: 1;
     font-size: 24px;
-    background-color: var(--text-color-1);
+    border: none;
+    background-color: var(--button-color-1);
     color: var(--white-color);
-    border-top: 1px solid var(--text-color-1);
-    border-bottom: 1px solid var(--text-color-1);
+    padding: 5px 0;
+}
+
+.product-quantity-container button:hover{
+    background-color: var(--text-color-1);
 }
 
 .product-quantity-container p{
+    flex: 1;
     font-size: 24px;
-    width: 55px;
     text-align: center;
-    padding-top: 15px;
     background-color: var(--white-color);
-    border-top: 1px solid var(--text-color-1);
-    border-bottom: 1px solid var(--text-color-1);
+    padding: 5px 0;
 }
 
-.product-right-container > button{
-    font-size: 20px;
-    text-transform: uppercase;
+.product-btns{
+    display: flex;
+    gap: 10px;
+}
+
+.product-btns button{
+    width: 50%;
+}
+
+.product-btns button:nth-child(1){
+    font-size: 18px;
+    background-color: var(--button-color-1);
+    color: var(--white-color);
+    padding: 16px 32px;
+    border: 2px solid var(--button-color-1);
+}
+
+.product-btns button:nth-child(2){
+    font-size: 18px;
+    background-color: var(--white-color-);
+    color: var(--text-color-1);
+    padding: 16px 32px;
+    border: 2px solid var(--text-color-1);
+}
+
+.product-btns button:nth-child(1):hover{
+    background-color: var(--white-color);
+    color: var(--button-color-1);
+}
+
+.product-btns button:nth-child(2):hover{
+    background-color: var(--text-color-1);
+    color: var(--white-color);
+}
+
+@media screen and (max-width:1024px) {
+    
 }
 
 @media screen and (max-width:768px) {
@@ -108,12 +150,7 @@
     }
 
     .product-left-container, .product-right-container{
-        align-items: center;
         text-align: center;
         width: 100%;
-    }
-
-    .product-right-container > button{
-        align-self: center;
     }
 }

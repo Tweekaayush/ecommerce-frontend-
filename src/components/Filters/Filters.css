@@ -1,0 +1,97 @@
+.filter-container{
+    width: 100%;
+    margin-top: 32px;
+    display: flex;
+    flex-direction: column;
+}
+
+.back-link{
+    display: flex;
+    align-self: flex-start;
+    align-items: center;
+    gap: 5px;
+}
+
+.back-link p, .back-link svg{
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.filter-header{
+    display: flex;
+    flex-direction: column;
+}
+
+.filter-header h2{
+    flex: 1;
+    align-self: center;
+}
+
+.filter-content{
+    margin-top: 16px;
+    background-color: var(--bg-color-3);
+    width: 100%;
+    padding: 32px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    list-style: none;
+    gap: 32px;
+}
+
+.filter-content li, .filter-children li{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.filter-content li p, .filter-content li svg{
+    font-size: 18px;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.filter-toggle svg{
+    transform: rotate(90deg);
+}
+
+.filter-children{
+    position: relative;
+    background-color: var(--bg-color-3);
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    list-style: none;
+    flex-wrap: wrap; 
+    max-height: 0;
+    overflow: hidden;
+    gap: 32px;
+    transition: max-height 0.3s, padding 0.3s;
+}
+
+.filter-children-toggle{
+    max-height: 50px;
+    padding: 10px 32px;
+}
+
+.active-filters{
+    list-style: none;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: var(--bg-color-3);
+    padding: 10px 32px;  
+    gap: 16px;
+    flex-wrap: wrap; 
+}
+
+.active-filters li{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background-color: var(--white-color);
+    padding: 5px 10px;
+    border-radius: 20px;
+    color: var(--text-color-1);
+}

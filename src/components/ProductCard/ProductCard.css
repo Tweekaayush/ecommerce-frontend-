@@ -1,5 +1,10 @@
 .product-card{
     border: 2px solid var(--overlay-color-1);
+    white-space: pre-wrap;
+    white-space: -moz-pre-wrap;
+    white-space: -pre-wrap;
+    white-space: -o-pre-wrap;
+    word-wrap: break-word;
 }
 
 .product-card:hover{
@@ -15,6 +20,7 @@
 .product-card-img{
     width: 210px;
 }
+
 .product-card2-img{
     width: 100%;
 }

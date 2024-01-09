@@ -1,0 +1,39 @@
+.browse-product-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 85vh;
+    padding: 32px 0;
+}
+
+.browse-product-grid{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    overflow-y: scroll;
+    gap: 10px;
+}
+
+.browse-product-grid::-webkit-scrollbar {
+    display: none;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.pagination{
+    margin-top: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    border-top: 2px solid var(--bg-color-3);
+    gap: 16px;
+}
+
+.pagination p{
+    height: 50px;
+    width: 50px;
+    font-size: 18px;
+    padding: 10px;
+    text-align: center;
+    background-color: red;
+}

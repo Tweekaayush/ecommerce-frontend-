@@ -8,6 +8,7 @@ import Browse from './pages/Browse/Browse'
 import Product from './pages/Product/Product'
 import Footer from './components/Layout/Footer/Footer'
 import { CartContextProvider } from './context/CartContext'
+import { ProductContextProvider } from './context/ProductContext'
 
 const App = () => {
 
@@ -17,18 +18,20 @@ const App = () => {
   }
 
   return (
-    <CartContextProvider>  
-      <Router>
-        <Navbar cartStatus={cart} setCartStatus={setCartStatus}/>
-        <Cart cartStatus={cart} setCartStatus={setCartStatus}/>
-        <Routes>
-          <Route exact path='/' element={<Home />}></Route>
-          <Route exact path='/product/:id' element={<Product />}></Route>
-          <Route exact path='/browse' element={<Browse />}></Route>
-        </Routes>
-        <Footer/>
-      </Router>
-    </CartContextProvider>
+    <ProductContextProvider>
+      <CartContextProvider>  
+        <Router>
+          <Navbar cartStatus={cart} setCartStatus={setCartStatus}/>
+          <Cart cartStatus={cart} setCartStatus={setCartStatus}/>
+          <Routes>
+            <Route exact path='/' element={<Home />}></Route>
+            <Route exact path='/product/:id' element={<Product />}></Route>
+            <Route exact path='/browse' element={<Browse />}></Route>
+          </Routes>
+          <Footer/>
+        </Router>
+      </CartContextProvider>
+    </ProductContextProvider>
   )
 }
 

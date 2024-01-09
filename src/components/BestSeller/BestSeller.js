@@ -2,7 +2,7 @@ import React from 'react'
 import './BestSeller.css'
 import ProductCard2 from '../ProductCard/ProductCard2';
 
-const BestSeller = () => {
+const BestSeller = ({products}) => {
     
   return (
     <section id="bestSeller">
@@ -10,10 +10,11 @@ const BestSeller = () => {
             <div className="bestSeller-container">
                 <h1 className="section-heading">Best Seller</h1>
                 <div className="bestSeller-list">
-                    <ProductCard2/>
-                    <ProductCard2/>
-                    <ProductCard2/>
-                    <ProductCard2/>
+                  {
+                    products.slice(8, 16).map((product)=>{
+                      return <ProductCard2 key={product.id} {...product}/>
+                    })
+                  }
                 </div>
             </div>
         </div>

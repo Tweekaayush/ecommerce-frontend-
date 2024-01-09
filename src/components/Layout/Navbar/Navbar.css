@@ -7,14 +7,13 @@ nav{
     padding: 0 30px;
     position: fixed;
     z-index: 997;
-    transition: all 0.3s;
 }
 
 .nav-container{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 1140px;
+    width: 1300px;
 }
 
 .nav-brand{
@@ -37,6 +36,7 @@ nav{
     justify-content: center;
     align-items: center;
     gap: 5px;
+    cursor: pointer;
 }
 
 .nav-item svg{
@@ -52,6 +52,18 @@ nav{
     color: var(--text-color-1);
 }
 
+.nav-item span{
+    position: absolute;
+    top: -20px;
+    right: 30px;
+    font-size: 14px;
+    background-color: var(--button-color-1);
+    color: var(--white-color);
+    text-align: center;
+    padding: 5px 9px;
+    border-radius: 50%;
+}
+
 @media screen and (max-width: 1200px) {
     nav{
         padding: 0 16px;
@@ -64,6 +76,9 @@ nav{
 @media screen and (max-width:768px) {
     .nav-item p{
         display: none;
+    }
+    .nav-item span{
+        right: -14px;
     }
 }
 
@@ -85,4 +100,9 @@ nav{
 
 .page-overlay-active{
     display: block !important;
+}
+
+.scrolled .nav-item span{
+    background-color: var(--text-color-1);
+    color: var(--white-color);
 }
