@@ -3,12 +3,12 @@ import './BestSeller.css'
 import ProductCard2 from '../ProductCard/ProductCard2';
 
 const BestSeller = ({products}) => {
-    
+  
   return (
     <section id="bestSeller">
         <div className="container">
             <div className="bestSeller-container">
-                <h1 className="section-heading">Best Seller</h1>
+                <h1 className="section-heading">Best Sellers</h1>
                 <div className="bestSeller-list">
                   {
                     products.slice(8, 16).map((product)=>{

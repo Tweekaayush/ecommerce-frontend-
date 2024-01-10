@@ -32,9 +32,11 @@ const Cart = ({cartStatus, setCartStatus}) => {
                 }
               </div>
               <div className="cart-summary">
-                <p>
-                  Subtotal: {totalPrice}
-                </p>
+                <div className="cart-subtotal">
+                  <h3>Subtotal: </h3>
+                  <p>Rs. {totalPrice}/-</p>
+                </div>
+                <button className='section-btn'>Checkout</button>
               </div>
             </div>
             )

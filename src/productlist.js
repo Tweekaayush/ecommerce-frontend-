@@ -72,6 +72,7 @@ export const items = [
     texture: "Sheep Skin",
     weight: "15kg",
     size: "150cm x 70cm",
+    ratings: 4.5,
   },
   {
     id: 2,
@@ -85,6 +86,7 @@ export const items = [
     texture: "Plastic",
     weight: "3.5kg",
     size: "20xm x 10cm",
+    ratings: 4.1,
   },
   {
     id: 3,
@@ -98,6 +100,7 @@ export const items = [
     texture: "Plastic",
     weight: "2kg",
     size: "15cm x 15cm",
+    ratings: 4.8,
   },
   {
     id: 4,
@@ -111,6 +114,7 @@ export const items = [
     texture: "Wood",
     weight: "45kg",
     size: "250cm x 60cm",
+    ratings: 3.9,
   },
   {
     id: 5,
@@ -124,6 +128,7 @@ export const items = [
     texture: "Plastic",
     weight: "3kg",
     size: "20cm x 20cm",
+    ratings: 4.2,
   },
   {
     id: 6,
@@ -137,6 +142,7 @@ export const items = [
     texture: "Liquid",
     weight: "200ml",
     size: "10cm x 5cm",
+    ratings: 3.6,
   },
   {
     id: 7,
@@ -150,6 +156,7 @@ export const items = [
     texture: "Plastic",
     weight: "6kg",
     size: "20cm x 20cm",
+    ratings: 4.7,
   },
   {
     id: 8,
@@ -163,6 +170,7 @@ export const items = [
     texture: "Wood",
     weight: "10kg",
     size: "60cm x 20cm",
+    ratings: 4,
   },
   {
     id: 9,
@@ -176,6 +184,7 @@ export const items = [
     texture: "Ceramics",
     weight: "12kg",
     size: "45cm x 15cm",
+    ratings: 3.1,
   },
   {
     id: 10,
@@ -189,6 +198,7 @@ export const items = [
     texture: "Wood",
     weight: "8kg",
     size: "60cm x 40cm",
+    ratings: 4.3,
   },
   {
     id: 11,
@@ -202,6 +212,7 @@ export const items = [
     texture: "Plastic",
     weight: "4kg",
     size: "20cm x 20cm",
+    ratings: 4.8,
   },
   {
     id: 12,
@@ -215,6 +226,7 @@ export const items = [
     texture: "Plastic",
     weight: "4kg",
     size: "15cm x 15cm",
+    ratings: 4.9,
   },
   {
     id: 13,
@@ -228,6 +240,7 @@ export const items = [
     texture: "Cotton",
     weight: "180g",
     size: "20cm x 10cm",
+    ratings: 3.8,
   },
   {
     id: 14,
@@ -241,6 +254,7 @@ export const items = [
     texture: "Wood",
     weight: "15kg",
     size: "60cm x 30cm",
+    ratings: 4,
   },
   {
     id: 15,
@@ -254,6 +268,7 @@ export const items = [
     texture: "Wood",
     weight: "14kg",
     size: "65cm x 35cm",
+    ratings: 4.2,
   },
   {
     id: 16,
@@ -267,6 +282,7 @@ export const items = [
     texture: "Metal",
     weight: "2kg",
     size: "15cm x 10cm",
+    ratings: 4.4,
   },
   {
     id: 17,
@@ -280,6 +296,7 @@ export const items = [
     texture: "Metal",
     weight: "5kg",
     size: "25cm x 15cm",
+    ratings: 4.7,
   },
   {
     id: 18,
@@ -293,6 +310,7 @@ export const items = [
     texture: "Metal",
     weight: "6kg",
     size: "20cm x 15cm",
+    ratings: 4,
   },
   {
     id: 19,
@@ -306,6 +324,7 @@ export const items = [
     texture: "Comfy Material",
     weight: "25kg",
     size: "60cm x 30cm",
+    ratings: 3.4,
   },
   {
     id: 20,
@@ -319,5 +338,6 @@ export const items = [
     texture: "Liquid",
     weight: "50ml",
     size: "10cm x 5cm",
+    ratings: 4.1,
   },
 ];

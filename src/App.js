@@ -9,6 +9,7 @@ import Product from './pages/Product/Product'
 import Footer from './components/Layout/Footer/Footer'
 import { CartContextProvider } from './context/CartContext'
 import { ProductContextProvider } from './context/ProductContext'
+import Login from './pages/Login/Login'
 
 const App = () => {
 
@@ -24,9 +25,11 @@ const App = () => {
           <Navbar cartStatus={cart} setCartStatus={setCartStatus}/>
           <Cart cartStatus={cart} setCartStatus={setCartStatus}/>
           <Routes>
-            <Route exact path='/' element={<Home />}></Route>
+            <Route exact path='/' element={<Home />} ></Route>
             <Route exact path='/product/:id' element={<Product />}></Route>
             <Route exact path='/browse' element={<Browse />}></Route>
+            <Route exact path='/browse/:category' element={<Browse />}></Route>
+            <Route exact path='/login' element={<Login />}></Route>
           </Routes>
           <Footer/>
         </Router>

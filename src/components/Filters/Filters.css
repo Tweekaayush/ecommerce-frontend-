@@ -10,11 +10,22 @@
     align-self: flex-start;
     align-items: center;
     gap: 5px;
+    cursor: pointer;
 }
 
 .back-link p, .back-link svg{
     font-size: 16px;
     font-weight: 600;
+}
+
+.filter-content{
+
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bg-color-1);
+    min-height: 100px;
+    padding: 16px;
+
 }
 
 .filter-header{
@@ -27,71 +38,21 @@
     align-self: center;
 }
 
-.filter-content{
-    margin-top: 16px;
-    background-color: var(--bg-color-3);
-    width: 100%;
-    padding: 32px;
+.category-filter{
+    flex: 1;
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
+    gap: 10px;
     list-style: none;
-    gap: 32px;
+    margin-top: 24px;
+    flex-wrap: wrap;
 }
 
-.filter-content li, .filter-children li{
-    display: flex;
-    align-items: center;
-    gap: 5px;
-}
-
-.filter-content li p, .filter-content li svg{
-    font-size: 18px;
-    font-weight: 600;
-    transition: all 0.3s;
-}
-
-.filter-toggle svg{
-    transform: rotate(90deg);
-}
-
-.filter-children{
-    position: relative;
-    background-color: var(--bg-color-3);
-    width: 100%;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    list-style: none;
-    flex-wrap: wrap; 
-    max-height: 0;
-    overflow: hidden;
-    gap: 32px;
-    transition: max-height 0.3s, padding 0.3s;
-}
-
-.filter-children-toggle{
-    max-height: 50px;
-    padding: 10px 32px;
-}
-
-.active-filters{
-    list-style: none;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    background-color: var(--bg-color-3);
-    padding: 10px 32px;  
-    gap: 16px;
-    flex-wrap: wrap; 
-}
-
-.active-filters li{
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    background-color: var(--white-color);
+.category-filter li{
     padding: 5px 10px;
-    border-radius: 20px;
-    color: var(--text-color-1);
+    border: 2px solid var(--overlay-color-1);
+    cursor: pointer;
+    text-transform: capitalize;
+    font-weight: 500;
 }

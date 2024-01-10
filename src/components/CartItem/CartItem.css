@@ -22,7 +22,18 @@
     padding: 16px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+}
+
+.cart-middle h3{
+    font-size: 20px;
+}
+
+.cart-middle p{
+    margin-top: 10px;
+}
+
+.cart-item p span{
+    font-weight: 600;
 }
 
 .cart-item svg{

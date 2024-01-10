@@ -1,15 +1,29 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import './CategoryBar.css'
+import { ProductContext } from '../../context/ProductContext'
+import { useNavigate } from 'react-router-dom'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faAngleRight } from '@fortawesome/free-solid-svg-icons'
 
 const CategoryBar = () => {
+
+  const {categories} = useContext(ProductContext)
+  const navigate = useNavigate()
+
   return (
     <section id="category-bar">
         <div className="container">
             <div className="category-bar-container">
-                <p>Category</p>
-                <p>Category</p>
-                <p>Category</p>
-                <p>Category</p>
+              {
+                categories.map((category, i)=>{
+                  return (
+                    <div key={i} onClick={()=>navigate(`/browse/${category}`)}>
+                      <p>{category}</p>
+                      <FontAwesomeIcon icon={faAngleRight}/>
+                    </div>
+                  )
+                })
+              }
             </div>
         </div>
     </section>

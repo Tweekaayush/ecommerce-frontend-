@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import './ProductContent.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faStar, faCartShopping, faHeart } from '@fortawesome/free-solid-svg-icons'
 
 const ProductContent = (props) => {
   const [quantity, setQuantity] = useState(1)
@@ -48,18 +50,24 @@ const ProductContent = (props) => {
                     </div>
                 </div>
                 <div className="product-right-container">
-                    <h1 className="product-heading">{props.title}</h1>
-                    <h2>rating</h2>
+                    <div className="product-headers">
+                        <h1 className="product-heading">{props.title}</h1>
+                        <h2>{props.ratings} <FontAwesomeIcon icon={faStar} /></h2>
+                    </div>
                     <p className='body-text'>{props.description}</p>
-                    <p className='product-price'>Rs. {props.price}</p>
+                    <p className='product-price'>₹ {props.price}</p>
                     <div className='product-quantity-container'>
                         <button onClick={decrement}>-</button>
                         <p>{quantity}</p>
                         <button onClick={increment}>+</button>
                     </div>
                     <div className="product-btns">
-                        <button onClick={AddToCart}>Add to cart</button>
-                        <button>Wishlist</button>
+                        <button onClick={AddToCart}>
+                            <FontAwesomeIcon icon={faCartShopping}/> Add to cart
+                        </button>
+                        <button>
+                            <FontAwesomeIcon icon={faHeart} /> Wishlist
+                        </button>
                     </div>
                 </div>
             </div>

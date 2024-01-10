@@ -55,12 +55,12 @@ nav{
 .nav-item span{
     position: absolute;
     top: -20px;
-    right: 30px;
+    right: 24px;
     font-size: 14px;
     background-color: var(--button-color-1);
     color: var(--white-color);
     text-align: center;
-    padding: 5px 9px;
+    padding: 4px 10px;
     border-radius: 50%;
 }
 

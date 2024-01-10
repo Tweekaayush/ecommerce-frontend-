@@ -28,9 +28,9 @@ const Navbar = ({cartStatus, setCartStatus}) => {
           <ul className={scroll?'nav-links nav-active':'nav-links'}>
             <li className="nav-item" onClick={() => navigate('/browse')}>
               <FontAwesomeIcon icon={faMagnifyingGlass} />
-              <p>Search</p>
+              <p>Browse</p>
             </li>
-            <li className="nav-item">
+            <li className="nav-item" onClick={() => navigate('/login')}>
               <FontAwesomeIcon icon={faUser} />
               <p>Account</p>
             </li>

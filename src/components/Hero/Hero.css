@@ -23,35 +23,54 @@
 }
 
 .hero-headings h3{
-    font-size: 20px;
+    font-size: 18px;
     color: var(--text-color-1);
+    text-transform: uppercase;
 }
 
 .hero-headings h1{
-    font-size: 50px;
+    font-size: 70px;
     color: var(--text-color-1);
-    font-weight: 800;
+    font-weight: 900;
+    text-transform: uppercase;
 }
 
 .hero-headings p{
     margin-right: 32px;
     margin-top: 16px;
     margin: 8px 32px 24px 0;
+    font-size: 18px;
 }
 
 .hero-right-container img{
-    width: 400px;
-    height: 400px;
-    object-fit: cover;
+    width: 500px;
+    height: 500px;
+    filter: drop-shadow(5px 5px 5px var(--overlay-color-1));
 }
 
 
 @media screen and (max-width:1024px) {
     
     .hero-right-container img{
-        width: 300px;
-        height: 300px;
-        object-fit: cover;
+        width: 400px;
+        height: 400px;
+    }
+
+    .hero-headings h3{
+        font-size: 18px;
+        color: var(--text-color-1);
+        text-transform: uppercase;
+    }
+    
+    .hero-headings h1{
+        font-size: 50px;
+        color: var(--text-color-1);
+        font-weight: 900;
+        text-transform: uppercase;
+    }
+
+    .hero-headings p{
+        margin: 8px 0 24px 0;
     }
 
 }
