@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faTwitter, faFacebook, faPinterest, faInstagram} from '@fortawesome/free-brands-svg-icons'
 import './Footer.css'
+import { Link } from 'react-router-dom'
 
 const Footer = () => {
 
@@ -24,16 +25,16 @@ const Footer = () => {
             <h2 className='footer-link-heading'>Customer Service</h2>
             <ul>
               <li>
-                <a href="/">Contact</a>
+                <Link to="/">Contact</Link>
               </li>
               <li>
-                <a href="/">FAQ</a>
+                <Link to="/">FAQ</Link>
               </li>
               <li>
-                <a href="/">Returns</a>
+                <Link to="/">Returns</Link>
               </li>
               <li>
-                <a href="/">Policy</a>
+                <Link to="/">Policy</Link>
               </li>
             </ul>
           </div>
@@ -41,16 +42,16 @@ const Footer = () => {
             <h2 className='footer-link-heading'>Popular Categories</h2>
             <ul>
               <li>
-                <a href="/">Category</a>
+                <Link to="/browse/furniture">Furniture</Link>
               </li>
               <li>
-                <a href="/">Category</a>
+                <Link to="/browse/electronic">Electronics</Link>
               </li>
               <li>
-                <a href="/">Category</a>
+                <Link to="/browse/lamp">Lamps</Link>
               </li>
               <li>
-                <a href="/">Category</a>
+                <Link to="/browse/chair">Chairs</Link>
               </li>
             </ul>
           </div>
@@ -58,22 +59,22 @@ const Footer = () => {
             <h2 className='footer-link-heading'>Keep in touch</h2>
             <ul>
               <li>
-                <a href="/">
+                <a href="https://twitter.com">
                   <FontAwesomeIcon icon={faTwitter} />
                 </a>
               </li>
               <li>
-                <a href="/">
+                <a href="https://www.facebook.com">
                   <FontAwesomeIcon icon={faFacebook} />
                 </a>
               </li>
               <li>
-                <a href="/">
+                <a href="https://www.instagram.com">
                   <FontAwesomeIcon icon={faInstagram} />
                 </a>
               </li>
               <li>
-                <a href="/">
+                <a href="https://www.pinterest.com">
                   <FontAwesomeIcon icon={faPinterest} /> 
                 </a>
               </li>

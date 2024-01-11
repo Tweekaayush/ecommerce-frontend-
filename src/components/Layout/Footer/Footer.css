@@ -152,8 +152,16 @@ footer{
     .upper-footer-content{
         width: 100%;
     }
+
+    .upper-footer-content p{
+        font-size: 20px;
+    }
+
     .middle-footer-content{
         width: 100%;
+    }
+    .footer-link-heading{
+        font-size: 20px;
     }
 }
 
@@ -169,6 +177,11 @@ footer{
 
     .upper-footer-content p{
         margin-bottom: 24px;
+        font-size: 18px;
+    }
+
+    .footer-link-heading{
+        font-size: 18px;
     }
 }
 

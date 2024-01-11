@@ -1,6 +1,5 @@
 #login{
-    min-height: 90vh;
-    padding-top: 150px;
+    padding-top: 100px;
 }
 
 .form-container{
@@ -13,34 +12,55 @@
 .form-container form{
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    padding: 32px 48px;
+    padding: 16px 32px;
     width: 500px;
     height: fit-content;
     background-color: var(--bg-color-3);
-    gap: 16px;
 }
 
 .form-heading{
-    font-size: 45px;
+    font-size: 35px;
     align-self: center;
     text-transform: uppercase;
-    font-weight: 900;
-    margin-bottom: 32px;
+    font-weight: bold;
+    margin: 32px 0 32px 0;
+    color: var(--text-color-1);
+}
+
+.form-input{
+    display: flex;
+    position: relative;
+    margin-top: 16px;
+}
+
+.form-input svg{
+    position: absolute;
+    font-size: 18px;
+    padding: 16px 20px;
+    color: var(--overlay-color-1);
+}
+
+.form-input input{
+    flex: 1;
+    font-size: 18px;
+    border: none;
+    padding: 16px 16px 16px 58px;
+}
+
+.form-input input:focus{
+    outline: none;
+}
+
+.form-input input::placeholder{
+    font-size: 18px;
+    color: var(--overlay-color-1);
 }
 
 .form-container form span{
     display: flex;
     align-items: center;
     gap: 5px;
-}
-
-
-
-.form-container form input[type='email'], .form-container form input[type='password']{
-    font-size: 20px;
-    border: none;
-    padding: 16px 32px;
+    margin-top: 16px;
 }
 
 .form-container form input[type='checkbox']{
@@ -52,19 +72,15 @@
     height: 16px;
     border: 1px solid var(--overlay-color-1);
 }
+
 .form-container form input[type='checkbox']:checked{
     background-color: var(--button-color-1);
 }
 
 .form-container form input[type='submit']{
     font-size: 18px;
-    text-decoration: none;
-    background-color: var(--button-color-1);
-    color: var(--white-color);
-    padding: 16px 32px;
-    border: 2px solid var(--button-color-1);
-    text-transform: uppercase;
     margin-top: 32px;
+    width: 100%;
 }
 
 .form-container form label{
@@ -72,9 +88,10 @@
 }
 
 .form-container form p{
-    font-size: 20px;
+    font-size: 18px;
     color: var(--overlay-color-2);
-    padding: 48px 32px 8px 32px;
+    /* padding: 48px 32px 8px 32px; */
+    margin: 48px 0 16px 0;    
     text-align: center;
 }
 
@@ -83,7 +100,7 @@
 }
 
 .form-container form p:last-child{
-    padding-bottom: 0;
+    margin-bottom: 0;
 }
 
 .form-auth{
@@ -97,11 +114,14 @@
     justify-content: center;
     align-items: center;
     gap: 5px;
-    font-size: 20px;
-    padding: 5px;
+    font-size: 18px;
+    padding: 10px;
     background-color: var(--white-color);
-    border: 1px solid var(--overlay-color-1);
     cursor: pointer;
+}
+
+.form-links:hover{
+    background-color: rgba(0, 0, 0, 0.1);
 }
 
 .form-links:first-child{
@@ -109,9 +129,10 @@
 }
 
 .form-links:last-child{
+    margin-top:auto;
     color: var(--text-color-1);
 }
 
 .form-links img{
-    width: 25px;
+    width: 20px;
 }

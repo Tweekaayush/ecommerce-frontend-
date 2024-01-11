@@ -16,6 +16,7 @@
     text-align: center;
     font-weight: 600;
     color: var(--text-color-1);
+    cursor: pointer;
 }
 
 .pagination svg{
@@ -24,5 +25,5 @@
     padding: 10px;
     text-align: center;
     font-weight: 600;
-    color: var(--text-color-1);
+    color: var(--bg-color-4);
 }

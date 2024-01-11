@@ -2,7 +2,7 @@ import React, {useContext, useState} from 'react'
 import './Navbar.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faCartShopping, faMagnifyingGlass, faUser} from '@fortawesome/free-solid-svg-icons'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, Link } from 'react-router-dom'
 import { CartContext } from '../../../context/CartContext'
 
 const Navbar = ({cartStatus, setCartStatus}) => {
@@ -24,7 +24,7 @@ const Navbar = ({cartStatus, setCartStatus}) => {
       <div id="page-overlay" className={cartStatus?'page-overlay-active':''} onClick={()=>setCartStatus(false)}></div>
       <nav className={scroll?'scrolled':''}>
         <div className="nav-container">
-          <a href="/" className="nav-brand">Ecommerce</a>
+          <Link to="/" className="nav-brand">Ecommerce</Link>
           <ul className={scroll?'nav-links nav-active':'nav-links'}>
             <li className="nav-item" onClick={() => navigate('/browse')}>
               <FontAwesomeIcon icon={faMagnifyingGlass} />

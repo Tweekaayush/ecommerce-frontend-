@@ -10,7 +10,7 @@ const Pagination = ({page, setPage, paginate}) => {
   const [totalPages, setTotalPages] = useState([])
   
   const style = {
-    backgroundColor: '#222222',
+    backgroundColor: '#eeaa91',
     color: '#ffffff'
   }
 

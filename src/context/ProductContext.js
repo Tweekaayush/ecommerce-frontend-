@@ -18,25 +18,24 @@ export const ProductContextProvider = ({children}) =>{
         return products.find((product) => product.id === Number(id))
     }
 
-    const getFilteredProducts = (category) =>{
-        if(category === ''){
-            setProducts(items)
-            setProductsLength(items.length)
+    const getFilteredProducts = (category, sort) =>{
+        let newArr = [...items]
+        if(category !== ''){
+            newArr = items.filter((product)=>product.category === category)
         }
-        else{
-            let newArr = items.filter((product)=>product.category === category)
-            setProducts(newArr)
-            setProductsLength(newArr.length)
-        }
+        if(sort !== 'no')
+            newArr = sort === 'asc'? sortProducts(newArr, false) : sortProducts(newArr, true)
+        setProducts(newArr)
+        setProductsLength(newArr.length)
     }
 
     const getAllProducts = () =>{
         setProducts(items)
     }
 
-    const sortProducts = (reverse) =>{
-        reverse ? products.sort((a, b) => b.price - a.price): products.sort((a, b) => a.price - b.price)
-        setProducts(products)
+    const sortProducts = (newArr, reverse) =>{
+        reverse ? newArr.sort((a, b) => b.price - a.price): newArr.sort((a, b) => a.price - b.price)
+        return newArr
     }
 
     const value = {
@@ -46,7 +45,6 @@ export const ProductContextProvider = ({children}) =>{
         categories,
         getFilteredProducts,
         getAllProducts,
-        sortProducts
     }
 
     return <ProductContext.Provider value={value}>

@@ -18,7 +18,7 @@ nav{
 
 .nav-brand{
     text-decoration: none;
-    font-weight: 900;
+    font-weight: bold;
     font-size: 24px;
     text-transform: uppercase;
     color: var(--main-color);
@@ -41,13 +41,13 @@ nav{
 
 .nav-item svg{
     position: relative;
-    font-size: 16px;
+    font-size: 14px;
     color: var(--text-color-1);
 }
 
 .nav-item p{
-    font-size: 14px;
-    font-weight: 700;
+    font-size: 15px;
+    font-weight: 600;
     text-transform: uppercase;
     color: var(--text-color-1);
 }
@@ -55,9 +55,9 @@ nav{
 .nav-item span{
     position: absolute;
     top: -20px;
-    right: 24px;
+    right: 30px;
     font-size: 14px;
-    background-color: var(--button-color-1);
+    background-color: var(--button-color-2);
     color: var(--white-color);
     text-align: center;
     padding: 4px 10px;

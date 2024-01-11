@@ -1,6 +1,4 @@
-#category{
-    background-color: var(--bg-color-4);
-}
+
 .category-container{
     display: grid;
     grid-template-rows: repeat(2, 1fr); 
