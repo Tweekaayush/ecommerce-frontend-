@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './App.css'
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom"
 import Navbar from './components/Layout/Navbar/Navbar'
@@ -17,6 +17,14 @@ const App = () => {
   const setCartStatus = (e) =>{
     setCart(e)
   }
+
+  const handleBodyOverflow = (cart) =>{
+    cart ? document.body.classList.add('hidden') : document.body.classList.remove('hidden')
+  }
+
+  useEffect(()=>{
+    handleBodyOverflow(cart)
+  }, [cart])
 
   return (
     <ProductContextProvider>

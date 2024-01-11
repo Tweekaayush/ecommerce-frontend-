@@ -33,6 +33,10 @@
 .resize-animation-stopper * {
     transition: none !important;
 }
+
+.hidden{
+    overflow: hidden;
+}
   
 html{
     font-family: 'Jura', sans-serif;

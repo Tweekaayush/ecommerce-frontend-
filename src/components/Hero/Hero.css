@@ -4,18 +4,6 @@
     padding-bottom: 80px;
     background: var(--bg-color-1);
     background-image: linear-gradient(to right, var(--bg-color-1), var(--bg-color-4));
-/* background: linear-gradient(90deg, rgba(9,9,121,1) 0%, rgba(0,212,255,1) 100%); */
-}
-
-.hero-bg-design{
-    position: absolute;
-    top: -60%;
-    right: -40%;
-    width: 1400px;
-    height: 1400px;
-    background-color: var(--bg-design-1);
-    border-radius: 50%;
-    filter: blur(100px);
 }
 
 .hero-container{

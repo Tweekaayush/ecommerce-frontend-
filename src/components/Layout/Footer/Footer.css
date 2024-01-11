@@ -5,7 +5,6 @@ footer{
     height: 80vh;
     width: 100%;
     background-color: var(--bg-color-3);
-    margin-top: 80px;
 }
 
 /* ------------------ Upper footer ------------------ */
@@ -43,7 +42,7 @@ footer{
 
 .upper-footer-content form input[type='email']{
     font-size: 20px;
-    border: 1px solid var(--overlay-color-1);
+    border: none;
     padding: 8px 16px;
 }
 
@@ -55,9 +54,10 @@ footer{
     font-size: 20px;
     padding: 8px 16px;
     text-transform: capitalize;
-    border: 1px solid var(--button-color-1);
+    border: none;
     background-color: var(--button-color-1);
     color: var(--white-color);
+    text-transform: uppercase;
 }
 
 /* ------------------ Middle footer ------------------ */
@@ -108,6 +108,7 @@ footer{
     text-transform: capitalize;
     font-weight: 600;
     color: var(--text-color-1);
+    padding-right: 15px;
 }
 
 
@@ -157,22 +158,34 @@ footer{
         font-size: 20px;
     }
 
+    .upper-footer-content form input{
+        font-size: 18px !important;
+    }
+
     .middle-footer-content{
         width: 100%;
     }
+
     .footer-link-heading{
         font-size: 20px;
     }
+
+    .middle-footer-content div ul li a{
+        font-size: 17px;
+    }    
 }
 
 @media screen and (max-width:768px) {
     .upper-footer-content{
         flex-direction: column;
-        text-align: center;
     }
 
-    .middle-footer-content{
-        text-align: center;
+    .upper-footer-content form{
+        align-self: flex-start;
+    }
+
+    .upper-footer-content form input{
+        font-size: 16px !important;
     }
 
     .upper-footer-content p{
@@ -183,14 +196,23 @@ footer{
     .footer-link-heading{
         font-size: 18px;
     }
+
+    .middle-footer-content div ul li a{
+        font-size: 16px;
+    }
+
+    .middle-footer-content div ul li a svg{
+        font-size: 14px;
+    }
 }
 
 @media screen and (max-width:480px) {
-    .upper-footer-content form{
-        flex-direction: column;
-    }
 
     .upper-footer-content form input[type='submit']{
-        flex: 1;
+        width: 100%;
+    }
+
+    .middle-footer-content div ul li a{
+        font-size: 15px;
     }
 }

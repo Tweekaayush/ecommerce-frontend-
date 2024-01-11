@@ -13,8 +13,12 @@ const PromotionBanner = () => {
                     <img src={img} alt="" />
                 </div>
                 <div className="promotion-right-container">
-                    <h1>Heading</h1>
-                    <p className='body-text'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate itaque earum temporibus numquam nisi nobis.</p>
+                    <h1>
+                        Comfortable & Elegante Living
+                    </h1>
+                    <p className='body-text'>
+                    RAOUF Products are all made to standard sizes so that you can mix and match them freely.
+                    </p>
                     <Link to="/browse" className='section-btn'>Shop Now</Link>
                 </div>
             </div>

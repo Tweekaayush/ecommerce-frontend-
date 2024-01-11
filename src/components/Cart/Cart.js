@@ -11,7 +11,7 @@ const Cart = ({cartStatus, setCartStatus}) => {
   return (
     <div id="cart" className={cartStatus?'cart-active':''}>
         <div className="cart-headers">
-          <h2>Your shopping cart(0)</h2>
+          <h2>Your shopping cart ({totalProducts})</h2>
           <FontAwesomeIcon icon={faXmark} onClick={() => setCartStatus(false)}/>
         </div>
         <div className="cart-content">

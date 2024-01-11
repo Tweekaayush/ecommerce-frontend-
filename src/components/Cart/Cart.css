@@ -40,6 +40,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 100%;
     padding: 16px;
 }
 
@@ -48,6 +49,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    height: 100%;
 }
 
 .empty-cart img{
@@ -74,15 +76,16 @@
 }
 
 .cart-item-list{
+    flex: 1;
     display: flex;
     flex-direction: column;
     gap: 16px;
-    overflow-y: scroll;
-    height: 75%;
+    overflow-y: scroll !important;
+    height: 50%;
 }
 
 .cart-summary{
-    height: 25%;
+    flex: 0.5;
     padding: 16px 0;
     display: flex;
     flex-direction: column;
