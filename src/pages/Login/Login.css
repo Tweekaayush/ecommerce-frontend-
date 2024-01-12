@@ -1,6 +1,9 @@
 #login{
     padding-block: 100px;
     min-height: 100vh;
+    background-image: url("https://www.transparenttextures.com/patterns/cubes.png");
+    /* background-size: 10%; */
+
 }
 
 .form-container{
