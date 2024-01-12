@@ -1,6 +1,6 @@
 #login{
     padding-block: 100px;
-    min-height: 80vh;
+    min-height: 100vh;
 }
 
 .form-container{
@@ -86,7 +86,8 @@
 }
 
 .form-container form label{
-    color: var(--overlay-color-2);
+    color: var(--text-color-2);
+    font-size: 18px;
 }
 
 .form-container form p{
@@ -119,6 +120,7 @@
     padding: 10px;
     background-color: var(--white-color);
     cursor: pointer;
+    text-decoration: none;
 }
 
 .form-links:hover{
@@ -170,6 +172,10 @@
 
     .form-links{
         font-size: 15px;
+    }
+
+    .form-container form label{
+        font-size: 16px;
     }
 }
 

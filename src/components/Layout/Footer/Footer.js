@@ -13,6 +13,11 @@ const Footer = () => {
     setYear(new Date().getFullYear())
   }
 
+  const handleSubmit = (e) =>{
+    e.preventDefault();
+    setEmail('')
+  }
+
   useEffect(()=>{
     getYear()
   }, [])
@@ -22,7 +27,7 @@ const Footer = () => {
       <div className="upper-footer">
         <div className="upper-footer-content">
           <p>Stay up to date! We send out a newsletter twice a week with our latest news.</p>
-          <form action="">
+          <form onSubmit={handleSubmit}>
             <input type="email" name="email" id="email" value={email} onChange={(e)=>setEmail(e.target.value)} placeholder='Email Address'/>
             <input type="submit" value="subscribe" />
           </form>

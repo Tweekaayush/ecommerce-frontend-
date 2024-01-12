@@ -3,7 +3,7 @@
     padding-top: 90px;
     padding-bottom: 80px;
     background: var(--bg-color-1);
-    background-image: linear-gradient(to right, var(--bg-color-1), var(--bg-color-4));
+    background: linear-gradient(to right, var(--bg-color-1), var(--bg-color-4));
 }
 
 .hero-container{
@@ -21,6 +21,7 @@
 
 .hero-right-container{
     align-items: center !important;
+    position: relative;
 }
 
 .hero-headings h3{
@@ -37,24 +38,21 @@
 }
 
 .hero-headings p{
-    margin-right: 32px;
-    margin-top: 16px;
-    margin: 8px 32px 24px 0;
+    margin: 8px 0 24px 0;
     font-size: 18px;
 }
 
 .hero-right-container img{
-    width: 500px;
-    height: 500px;
+    width: 100%;
     filter: drop-shadow(5px 5px 5px var(--overlay-color-1));
 }
 
 
 @media screen and (max-width:1024px) {
-    
+
     .hero-right-container img{
         width: 400px;
-        height: 400px;
+        filter: drop-shadow(5px 5px 5px var(--overlay-color-1));
     }
 
     .hero-headings h3{
@@ -77,6 +75,7 @@
 }
 
 @media screen and (max-width: 768px) {
+
     .hero-right-container{
         display: none !important;
     }

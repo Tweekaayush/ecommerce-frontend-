@@ -28,8 +28,8 @@ const Browse = () => {
     <section id="browse">
       <div className="container">
         <div className="browse-container">
-          <Filters  currentCategory={currentCategory} setCurrentCategory={setCurrentCategory} sortProducts={sortProducts} setSort={setSort}/>
-          <BrowseProducts products={products} productsLength={productsLength} page={page} setPage={setPage}/>
+          <Filters  currentCategory={currentCategory} setCurrentCategory={setCurrentCategory} sortProducts={sortProducts} setSort={setSort} sortStatus={sort}/>
+          <BrowseProducts products={products} productsLength={productsLength} page={page} setPage={setPage} />
         </div>
       </div>
     </section>

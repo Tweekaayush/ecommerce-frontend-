@@ -28,15 +28,38 @@
     font-size: 20px;
 }
 
-.cart-middle p{
+.cart-middle > p{
     margin-top: 10px;
 }
 
-.cart-item p span{
+.cart-item > p span{
     font-weight: 600;
 }
 
 .cart-item svg{
     font-size: 18px;
     padding: 16px;
+}
+
+.cart-quantity-container{
+    display: flex;
+    margin-top: 10px;
+    width: 40%;
+}
+
+.cart-quantity-container button{
+    flex: 1;
+    font-size: 18px;
+    border: none;
+    background-color: var(--button-color-1);
+    color: var(--white-color);
+    padding: 5px 0;
+}
+
+.cart-quantity-container p{
+    flex: 1;
+    font-size: 18px;
+    text-align: center;
+    background-color: var(--white-color);
+    padding: 5px 0;
 }

@@ -19,6 +19,12 @@
     scrollbar-width: none;
 }
 
+.pagination-container{
+    display: flex;
+    justify-content: center;
+    margin-top: 32px;
+}
+
 
 @media screen and (max-width:1024px) {
     .browse-product-grid{

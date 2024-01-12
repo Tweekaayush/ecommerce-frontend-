@@ -1,4 +1,4 @@
-nav{
+.navbar{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -54,13 +54,13 @@ nav{
 
 .nav-item span{
     position: absolute;
-    top: -20px;
+    top: -22px;
     right: 30px;
     font-size: 14px;
     background-color: var(--button-color-2);
     color: var(--white-color);
     text-align: center;
-    padding: 4px 10px;
+    padding: 5px 10px;
     border-radius: 50%;
 }
 

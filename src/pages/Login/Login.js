@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faEnvelope, faKey} from '@fortawesome/free-solid-svg-icons'
 import { useLocation } from 'react-router-dom'
+import { Snackbar, Alert } from '@mui/material'
 
 const Login = () => {
 
@@ -19,6 +20,7 @@ const Login = () => {
     email: '',
     password: ''
   })
+  const [open, setOpen] = useState(false)
 
   const handleChange = (e) =>{
     const { name, value } = e.target;
@@ -62,6 +64,11 @@ const Login = () => {
         remember: false
       })
     }
+    setOpen(true)
+  }
+
+  const handleClose = () =>{
+    setOpen(false)
   }
 
   useEffect(()=>{
@@ -91,19 +98,24 @@ const Login = () => {
             <input type="submit" value="Login" className='section-btn' />
             <p>Or login with</p>
             <div className="form-auth">
-              <div className="form-links">
+              <a href='https://www.facebook.com' className="form-links">
                 <img src={fb} alt="" />
                 <h3>Facebook</h3>
-              </div>
-              <div className="form-links">
+              </a>
+              <a href='https://www.google.com' className="form-links">
                 <img src={g} alt="" />
                 <h3>Google</h3>
-              </div>
+              </a>
             </div>
             <p>Not a member? <Link to="/login">Sign up now</Link></p>
           </form>
         </div>
       </div>
+      <Snackbar open={open} autoHideDuration={2000} onClose={handleClose}>
+            <Alert onClose={handleClose} severity="success">
+                FrontEnd Validation Successful
+            </Alert>
+        </Snackbar>
     </section>
   )
 }

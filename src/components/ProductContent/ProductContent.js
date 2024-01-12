@@ -2,10 +2,19 @@ import React, { useEffect, useState } from 'react'
 import './ProductContent.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStar, faCartShopping, faHeart } from '@fortawesome/free-solid-svg-icons'
+import { Alert, Snackbar, Slide } from '@mui/material';
+import {useNavigate} from 'react-router-dom'
+
+function TransitionTop(props) {
+    return <Slide {...props} direction="top" />;
+  }
 
 const ProductContent = (props) => {
+
+  const navigate = useNavigate()  
   const [quantity, setQuantity] = useState(1)
   const [homeImg, setHomeImg] = useState(props.img)
+  const [open, setOpen] = useState(false)
 
   const increment = () =>{
     setQuantity(quantity + 1)
@@ -17,8 +26,13 @@ const ProductContent = (props) => {
   }
 
   const AddToCart = ()=>{
+    setOpen(true)
     const product = {...props, quantity}
     props.addToCart(product)
+  }
+
+  const handleClose = () =>{
+    setOpen(false)
   }
 
   useEffect(()=>{
@@ -65,13 +79,19 @@ const ProductContent = (props) => {
                         <button onClick={AddToCart}>
                             <FontAwesomeIcon icon={faCartShopping}/> Add to cart
                         </button>
-                        <button>
+                        <button onClick={()=>navigate('/login')}>
                             <FontAwesomeIcon icon={faHeart} /> Wishlist
                         </button>
                     </div>
                 </div>
             </div>
         </div>
+
+        <Snackbar open={open} autoHideDuration={2000} onClose={handleClose} anchorOrigin={{vertical:'top',horizontal: 'center'}} TransitionComponent={TransitionTop}>
+            <Alert variant='filled' onClose={handleClose} severity="success">
+                Added To Cart
+            </Alert>
+        </Snackbar>
     </section>
   )
 }

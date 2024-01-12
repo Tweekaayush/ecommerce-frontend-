@@ -50,6 +50,10 @@ footer{
     outline: none;
 }
 
+.upper-footer-content form input[type='email']::placeholder{
+    color: var(--overlay-color-1);
+}
+
 .upper-footer-content form input[type='submit']{
     font-size: 20px;
     padding: 8px 16px;

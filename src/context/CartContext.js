@@ -12,8 +12,28 @@ export const CartContextProvider = ({children}) => {
         cartItems: []
     })
 
+    const updateCart = (arr) =>{
+
+        const reduceFunc = (total, item) =>{
+            return  total + (item.price * item.quantity)
+        }
+
+        let length = arr.length
+        let price = arr.reduce(reduceFunc, 0)
+    
+
+        const newCart = {
+            totalProducts: length,
+            totalPrice: price,
+            cartItems: arr
+        }
+
+        setCart(newCart)
+
+    }
+
     const addToCart = (product) =>{
-        let cartLength = cart.totalProducts
+
         let newArr = [...cart.cartItems]
         let foundIndex = newArr.findIndex(x => x.id === product.id);
 
@@ -21,38 +41,36 @@ export const CartContextProvider = ({children}) => {
             newArr[foundIndex].quantity += product.quantity;
         }
         else {
-            cartLength += 1
             newArr = [...newArr, product]
         }
 
-        const item = {
-            totalProducts: cartLength,
-            totalPrice: cart.totalPrice + product.price,
-            cartItems: newArr
-        }
-        setCart(item)
+        updateCart(newArr)
+
     }
 
     const removeFromCart = (id) =>{
-        let cartLength = cart.totalProducts
+
+        let newArr = [...cart.cartItems]
+        newArr = newArr.filter((item) => item.id !== id)
+        updateCart(newArr)
+
+    }
+
+    const changeQuantity = (id, quantity) =>{
         let newArr = [...cart.cartItems]
         let foundIndex = newArr.findIndex(x => x.id === id);
 
         if(foundIndex !== -1){
-            // if(newArr[foundIndex].quantity > 1)
-            //     newArr[foundIndex].quantity -= 1;
-            // else{
-            //     cartLength -= 1
-            // }
-            newArr = newArr.filter((item) => item.id !== id)
-            
-            const item = {
-                totalProducts: cartLength-1,
-                totalPrice: cart.totalPrice - cart.cartItems[foundIndex].price,
-                cartItems: newArr
+
+            if(quantity === 0){
+                newArr = newArr.filter((item) => item.id !== id)
             }
-            setCart(item)
+            else
+                newArr[foundIndex].quantity = quantity;
         }
+
+        updateCart(newArr)
+
     }
 
     const value = {
@@ -60,7 +78,8 @@ export const CartContextProvider = ({children}) => {
         totalPrice: cart.totalPrice,
         cartItems: cart.cartItems,
         addToCart,
-        removeFromCart
+        removeFromCart,
+        changeQuantity
     }
 
     useEffect(() => {

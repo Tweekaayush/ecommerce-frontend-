@@ -22,7 +22,7 @@ const Navbar = ({cartStatus, setCartStatus}) => {
   return (
     <>
       <div id="page-overlay" className={cartStatus?'page-overlay-active':''} onClick={()=>setCartStatus(false)}></div>
-      <nav className={scroll?'scrolled':''}>
+      <nav className={scroll?'navbar scrolled':'navbar'}>
         <div className="nav-container">
           <Link to="/" className="nav-brand">Ecommerce</Link>
           <ul className={scroll?'nav-links nav-active':'nav-links'}>

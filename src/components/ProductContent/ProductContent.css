@@ -41,6 +41,7 @@
 .product-img-item img{
     height: 100%;
     width: 100%;
+    background-color: var(--white-color);
 }
 .product-img-item{
     height: 100px;

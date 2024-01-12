@@ -5,9 +5,18 @@ import {faXmark} from '@fortawesome/free-solid-svg-icons'
 import { CartContext } from '../../context/CartContext'
 import CartItem from '../CartItem/CartItem'
 import img from '../../assets/images/cart/empty-cart.png'
+import { useNavigate } from 'react-router-dom'
 
 const Cart = ({cartStatus, setCartStatus}) => {
+
+  const navigate = useNavigate()
   const {cartItems, totalPrice, totalProducts, removeFromCart} = useContext(CartContext)
+
+  const handleRedirect = () =>{
+    setCartStatus(false)
+    navigate('/login')
+  }
+
   return (
     <div id="cart" className={cartStatus?'cart-active':''}>
         <div className="cart-headers">
@@ -36,7 +45,7 @@ const Cart = ({cartStatus, setCartStatus}) => {
                   <h3>Subtotal: </h3>
                   <p>Rs. {totalPrice}/-</p>
                 </div>
-                <button className='section-btn'>Checkout</button>
+                <button className='section-btn' onClick={handleRedirect}>Checkout</button>
               </div>
             </div>
             )
