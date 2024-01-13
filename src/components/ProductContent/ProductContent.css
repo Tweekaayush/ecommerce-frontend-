@@ -73,6 +73,7 @@
 
 .product-heading{
     font-size: 40px;
+    font-weight: 800;
 }
 
 .product-headers h2{
@@ -96,6 +97,7 @@
 
 .product-right-container > p{
     margin-bottom: 32px;
+    text-align: justify;
 }
 
 .product-price{

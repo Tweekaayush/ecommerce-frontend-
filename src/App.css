@@ -39,7 +39,7 @@
 }
   
 html{
-    font-family: 'Jura', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     position: relative;
 }
 
@@ -115,10 +115,10 @@ section{
 
 .body-text{
     font-size: 18px;
-    line-height: 1.8;
+    line-height: 35px;
     color: var(--text-color-2);
     font-weight: 400;
-    /* font-family: 'Jura', sans-serif; */
+    letter-spacing: 1px;
 }
 
 @media screen and (max-width:1200px) {
@@ -132,7 +132,9 @@ section{
     }
 }
 
-@media screen and (max-width:1024px) {
-    
+@media screen and (max-width:480px) {
+    .body-text{
+        letter-spacing: normal;
+    }   
 }
 

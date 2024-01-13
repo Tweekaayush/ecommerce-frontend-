@@ -80,9 +80,12 @@
         display: none !important;
     }
 
-    .hero-left-container{
-        align-items: center;
+    .hero-headings h3, .hero-headings h1{
         text-align: center;
+    }
+    
+    .hero-headings p{
+        text-align: justify;
     }
 
     .hero-headings p{
