@@ -40,6 +40,8 @@
 .hero-headings p{
     margin: 8px 0 24px 0;
     font-size: 18px;
+    word-wrap: break-word;
+    word-break: break-word;
 }
 
 .hero-right-container img{

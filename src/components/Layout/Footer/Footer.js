@@ -28,7 +28,7 @@ const Footer = () => {
         <div className="upper-footer-content">
           <p>Stay up to date! We send out a newsletter twice a week with our latest news.</p>
           <form onSubmit={handleSubmit}>
-            <input type="email" name="email" id="email" value={email} onChange={(e)=>setEmail(e.target.value)} placeholder='Email Address'/>
+            <input type="email" name="email" id="email" value={email} onChange={(e)=>setEmail(e.target.value)} placeholder='Email'/>
             <input type="submit" value="subscribe" />
           </form>
         </div>
@@ -70,7 +70,7 @@ const Footer = () => {
             </ul>
           </div>
           <div>
-            <h2 className='footer-link-heading'>Keep in touch</h2>
+            <h2 className='footer-link-heading'>Keep in touch!</h2>
             <ul>
               <li>
                 <a href="https://twitter.com">
@@ -99,7 +99,7 @@ const Footer = () => {
       <div className="lower-footer">
         <div className="lower-footer-content">
           <p className="copyright">
-            {year} &copy; All rights Reserved
+            Copyright {year} &copy; All rights Reserved
           </p>
         </div>
       </div>
