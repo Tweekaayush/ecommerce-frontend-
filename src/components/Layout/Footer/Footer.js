@@ -25,17 +25,23 @@ const Footer = () => {
   return (
     <footer>
       <div className="upper-footer">
-        <div className="upper-footer-content">
-          <p>Stay up to date! We send out a newsletter twice a week with our latest news.</p>
-          <form onSubmit={handleSubmit}>
-            <input type="email" name="email" id="email" value={email} onChange={(e)=>setEmail(e.target.value)} placeholder='Email'/>
-            <input type="submit" value="subscribe" />
-          </form>
-        </div>
+        <p>Stay up to date! We send out a newsletter twice a week with our latest news.</p>
+        <form onSubmit={handleSubmit}>
+          <input type="email" name="email" id="email" value={email} onChange={(e)=>setEmail(e.target.value)} placeholder='Email'/>
+          <input type="submit" value="subscribe" />
+        </form>
       </div>
       <div className="middle-footer">
-        <div className="middle-footer-content">
-          <div>
+        <div>
+          <div className="footer-about">
+            <h1 className="footer-brand">Ecommerce</h1>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore, exercitationem. Sed fugit dignissimos voluptas doloremque!
+            </p>
+          </div>
+        </div>
+        <div>
+          <div className='footer-services'>
             <h2 className='footer-link-heading'>Customer Service</h2>
             <ul>
               <li>
@@ -52,7 +58,9 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-          <div>
+        </div>
+        <div>
+          <div className='footer-category-links'>
             <h2 className='footer-link-heading'>Popular Categories</h2>
             <ul>
               <li>
@@ -69,7 +77,9 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-          <div>
+        </div>
+        <div>
+          <div className='footer-social-links'>
             <h2 className='footer-link-heading'>Keep in touch!</h2>
             <ul>
               <li>
@@ -97,11 +107,9 @@ const Footer = () => {
         </div>
       </div>
       <div className="lower-footer">
-        <div className="lower-footer-content">
           <p className="copyright">
             Copyright {year} &copy; All rights Reserved
           </p>
-        </div>
       </div>
     </footer>
   )

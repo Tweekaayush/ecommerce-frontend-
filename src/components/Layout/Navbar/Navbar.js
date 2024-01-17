@@ -1,4 +1,4 @@
-import React, {useContext, useState} from 'react'
+import React, {useContext, useEffect, useState} from 'react'
 import './Navbar.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faCartShopping, faMagnifyingGlass, faUser} from '@fortawesome/free-solid-svg-icons'
@@ -11,13 +11,20 @@ const Navbar = ({cartStatus, setCartStatus}) => {
   const navigate = useNavigate()
   const [scroll, setScroll] = useState(false)
 
-  window.addEventListener("scroll", ()=>{
+ const handleScroll = ()=>{
     if(window.scrollY > 0) 
         setScroll(true);
     else{
         setScroll(false)
     } 
-  });
+  }
+
+  useEffect(()=>{
+    window.addEventListener('scroll', handleScroll)
+    return ()=>{
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
 
   return (
     <>
