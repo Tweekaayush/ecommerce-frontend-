@@ -81,14 +81,6 @@ export const CartContextProvider = ({children}) => {
         removeFromCart,
         changeQuantity
     }
-
-    useEffect(() => {
-        const json = localStorage.getItem("cart");
-        const savedCart = JSON.parse(json);
-        if (savedCart) {
-          setCart(savedCart);
-        }
-      }, []);
     
       useEffect(() => {
         localStorage.setItem("cart", JSON.stringify(cart));
