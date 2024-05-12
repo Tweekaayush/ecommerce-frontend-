@@ -1,6 +1,5 @@
 import db, { getDocs, collection } from "./firebase"
 import { setProducts, setProductDetails, setFilteredProducts } from "../features/productSlice"
-import { items } from "../productlist"
 
 export const getProducts = async (dispatch) =>{
     let all = []

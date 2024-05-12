@@ -1,8 +1,7 @@
-import React, { useContext, useRef, useState, useEffect } from 'react'
+import React, { useRef, useEffect } from 'react'
 import './Filters.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleLeft } from '@fortawesome/free-solid-svg-icons'
-import { ProductContext } from '../../context/ProductContext'
 import { useNavigate } from 'react-router-dom'
 import SortIcon from '@mui/icons-material/Sort';
 
@@ -33,8 +32,8 @@ const Filters = ({currentCategory, setCurrentCategory, setSort, sortStatus, cate
 
 
   const handleOutsideClick = (e) =>{
-    if(ref.current && !ref.current.contains(e.target)){
-      ref2.current.classList.remove('arrange-items-active')
+    if(ref2.current && !ref2.current.contains(e.target)){
+      ref.current.classList.remove('arrange-items-active')
     }
   }
   
@@ -43,12 +42,12 @@ const Filters = ({currentCategory, setCurrentCategory, setSort, sortStatus, cate
   }
 
 
-  // useEffect(()=>{
-  //   window.addEventListener('click', handleOutsideClick)
-  //   return ()=>{
-  //     window.removeEventListener('click', handleOutsideClick)
-  //   }
-  // }, [])
+  useEffect(()=>{
+    window.addEventListener('click', handleOutsideClick)
+    return ()=>{
+      window.removeEventListener('click', handleOutsideClick)
+    }
+  }, [])
 
   return (
     <div className="filter-container">
@@ -68,7 +67,7 @@ const Filters = ({currentCategory, setCurrentCategory, setSort, sortStatus, cate
                     })
                 }
             </ul>
-            <div className="arrange-items">
+            <div className="arrange-items" ref={ref2}>
                 <SortIcon onClick={()=>ref.current.classList.add('arrange-items-active')} />
                 <ul className='arrange-items-dropdown' ref={ref}>
                     <li onClick={()=> closeArrangeItems('no')} style={sortStatus === 'no'?filterStyles:{}}>Featured</li>
