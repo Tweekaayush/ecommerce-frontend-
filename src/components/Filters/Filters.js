@@ -7,33 +7,11 @@ import { useNavigate } from 'react-router-dom'
 import SortIcon from '@mui/icons-material/Sort';
 
 
-function useComponentVisible(initialVal, sortFilter){
+const Filters = ({currentCategory, setCurrentCategory, setSort, sortStatus, categories}) => {
+
   const ref = useRef(null)
-  const [isVisible, setIsVisible] = useState(initialVal)
-
-  const handleOutsideClick = (e) =>{
-    if(ref.current && !ref.current.contains(e.target)){
-      sortFilter.current.classList.remove('arrange-items-active')
-      setIsVisible(false)
-    }
-  }
-
-  useEffect(()=>{
-    document.addEventListener('click', handleOutsideClick, true)
-    return ()=>{
-      document.removeEventListener('click', handleOutsideClick, true)
-    }
-  }, [])
-
-  return {ref, isVisible, setIsVisible}
-}
-
-const Filters = ({currentCategory, setCurrentCategory, setSort, sortStatus}) => {
-
-  const sortFilter = useRef(null)
-  const {categories} = useContext(ProductContext)
+  const ref2 = useRef(null)
   const navigate = useNavigate()
-  const {ref, isVisible, setIsVisible} = useComponentVisible(false, sortFilter)
 
   const styles = {
     border: '2px solid #222222',
@@ -53,19 +31,24 @@ const Filters = ({currentCategory, setCurrentCategory, setSort, sortStatus}) => 
         navigate(`/browse/${category}`)
   }
 
-  const handleArrangeItems = () =>{
-    if(!isVisible)
-      sortFilter.current.classList.add('arrange-items-active')
-    else
-      sortFilter.current.classList.remove('arrange-items-active')
-    setIsVisible(!isVisible)
+
+  const handleOutsideClick = (e) =>{
+    if(ref.current && !ref.current.contains(e.target)){
+      ref2.current.classList.remove('arrange-items-active')
+    }
   }
   
   const closeArrangeItems = (e) =>{
     setSort(e)
-    sortFilter.current.classList.remove('arrange-items-active')
-    isVisible(false)
   }
+
+
+  // useEffect(()=>{
+  //   window.addEventListener('click', handleOutsideClick)
+  //   return ()=>{
+  //     window.removeEventListener('click', handleOutsideClick)
+  //   }
+  // }, [])
 
   return (
     <div className="filter-container">
@@ -86,8 +69,8 @@ const Filters = ({currentCategory, setCurrentCategory, setSort, sortStatus}) => 
                 }
             </ul>
             <div className="arrange-items">
-                <SortIcon ref={ref} onClick={handleArrangeItems}/>
-                <ul className='arrange-items-dropdown' ref={sortFilter}>
+                <SortIcon onClick={()=>ref.current.classList.add('arrange-items-active')} />
+                <ul className='arrange-items-dropdown' ref={ref}>
                     <li onClick={()=> closeArrangeItems('no')} style={sortStatus === 'no'?filterStyles:{}}>Featured</li>
                     <li onClick={()=> closeArrangeItems('asc')} style={sortStatus === 'asc'?filterStyles:{}}>Sort by Price: low to high</li>
                     <li onClick={()=> closeArrangeItems('desc')} style={sortStatus === 'desc'?filterStyles:{}}>Sort by Price: high to low</li>

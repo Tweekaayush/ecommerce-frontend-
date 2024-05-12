@@ -21,7 +21,7 @@ const BrowseProducts = ({products, productsLength, page, setPage}) => {
         <div className="browse-product-container">
             <div className="browse-product-grid">
               {
-                products.slice((page-1)*paginate, paginate+((page-1)*paginate)).map((product)=>{
+                products?.slice((page-1)*paginate, paginate+((page-1)*paginate)).map((product)=>{
                   return <ProductCard2 key = {product.id} {...product}/>
                 })
               }

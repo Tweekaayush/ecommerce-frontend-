@@ -1,23 +1,29 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext, useEffect } from 'react'
 import Trending from '../../components/Trending/Trending'
 import ProductContent from '../../components/ProductContent/ProductContent'
 import ProductDetails from '../../components/ProductDetails/ProductDetails'
-import { ProductContext } from '../../context/ProductContext'
-import { useParams, useLocation } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import { CartContext } from '../../context/CartContext'
+import {useDispatch, useSelector} from 'react-redux'
+import { getProductDetails, getProducts } from '../../config/module'
+import { selectAllProducts, selectProductDetails } from '../../features/productSlice'
 
 const Product = () => {
   const {id} = useParams()
-  const {pathname} = useLocation()
-  const {products, getProductDetails} = useContext(ProductContext)
+  const dispatch = useDispatch()
+  const products = useSelector(selectAllProducts)
   const {addToCart} = useContext(CartContext)
-  const [productInfo, setProductInfo] = useState(getProductDetails(id))
+  const productInfo = useSelector(selectProductDetails)
 
   
   useEffect(()=>{
+    getProducts(dispatch)
     window.scrollTo(0, 0)
-    setProductInfo(getProductDetails(id))
-  }, [id, pathname])
+  }, [id])
+
+  useEffect(()=>{
+    getProductDetails(products, id, dispatch)
+  }, [id, products])  
   
   return (
     <>

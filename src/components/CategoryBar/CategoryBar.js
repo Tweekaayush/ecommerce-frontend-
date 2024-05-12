@@ -1,13 +1,10 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import './CategoryBar.css'
-import { ProductContext } from '../../context/ProductContext'
 import { useNavigate } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleRight } from '@fortawesome/free-solid-svg-icons'
 
-const CategoryBar = () => {
-
-  const {categories} = useContext(ProductContext)
+const CategoryBar = ({categories}) => {
   const navigate = useNavigate()
 
   return (

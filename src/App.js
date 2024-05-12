@@ -8,7 +8,6 @@ import Browse from './pages/Browse/Browse'
 import Product from './pages/Product/Product'
 import Footer from './components/Layout/Footer/Footer'
 import { CartContextProvider } from './context/CartContext'
-import { ProductContextProvider } from './context/ProductContext'
 import Login from './pages/Login/Login'
 
 const App = () => {
@@ -27,7 +26,6 @@ const App = () => {
   }, [cart])
 
   return (
-    <ProductContextProvider>
       <CartContextProvider>  
         <Router>
           <Navbar cartStatus={cart} setCartStatus={setCartStatus}/>
@@ -42,7 +40,6 @@ const App = () => {
           <Footer/>
         </Router>
       </CartContextProvider>
-    </ProductContextProvider>
   )
 }
 

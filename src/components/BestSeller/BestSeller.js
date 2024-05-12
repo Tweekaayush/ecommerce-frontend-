@@ -11,7 +11,7 @@ const BestSeller = ({products}) => {
                 <h1 className="section-heading">Best Sellers</h1>
                 <div className="bestSeller-list">
                   {
-                    products.slice(8, 16).map((product)=>{
+                    products?.slice(8, 16).map((product)=>{
                       return <ProductCard2 key={product.id} {...product}/>
                     })
                   }

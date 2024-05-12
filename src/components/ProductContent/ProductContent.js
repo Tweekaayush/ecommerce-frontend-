@@ -53,7 +53,7 @@ const ProductContent = (props) => {
                             <img src={props.img} alt="" />
                         </div>
                         {
-                            props.otherImgs.map((im, i)=>{
+                            props?.otherImgs?.map((im, i)=>{
                                 return (
                                     <div key={i} className="product-img-item" onClick={()=>setHomeImg(im)}>
                                         <img src={im} alt="" />
