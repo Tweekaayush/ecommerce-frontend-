@@ -1,14 +1,19 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './CartItem.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faXmark } from '@fortawesome/free-solid-svg-icons'
 import { useNavigate } from 'react-router-dom'
-import { CartContext } from '../../context/CartContext'
+import {changeQuantity} from '../../config/module'
+import {useDispatch, useSelector} from 'react-redux'
+import { removeFromCart } from '../../config/module'
+import { selectCartItems } from '../../features/cartSlice'
 
 const CartItem = (props) => {
+
     const navigate = useNavigate()
-    const {changeQuantity} = useContext(CartContext)
+    const dispatch = useDispatch()
     const [itemQuantity, setItemQuantity] = useState(props.product.quantity)
+    const cartItems = useSelector(selectCartItems)
 
     const redirect = (e) =>{
         props.setCartStatus(false)
@@ -16,8 +21,12 @@ const CartItem = (props) => {
     }
 
     useEffect(()=>{
-        changeQuantity(props.product.id, itemQuantity)
+        changeQuantity(cartItems, props.product.id, itemQuantity, dispatch)
     }, [itemQuantity])
+
+    useEffect(()=>{
+        setItemQuantity(props.product.quantity)
+    }, [props.product.quantity])
 
   return (
     <div className="cart-item">
@@ -33,7 +42,7 @@ const CartItem = (props) => {
                 <button onClick={()=>setItemQuantity(itemQuantity+1)}>+</button>
             </div>
         </div>
-        <FontAwesomeIcon icon={faXmark} onClick={()=>props.removeFromCart(props.product.id)}/>
+        <FontAwesomeIcon icon={faXmark} onClick={()=>removeFromCart(cartItems ,props.product.id, dispatch)}/>
     </div>
   )
 }

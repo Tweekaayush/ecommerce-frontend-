@@ -4,6 +4,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStar, faCartShopping, faHeart } from '@fortawesome/free-solid-svg-icons'
 import { Alert, Snackbar, Slide } from '@mui/material';
 import {useNavigate} from 'react-router-dom'
+import { addToCart } from '../../config/module';
+import { useDispatch, useSelector } from 'react-redux';
+import { selectCartItems } from '../../features/cartSlice';
 
 function TransitionTop(props) {
     return <Slide {...props} direction="top" />;
@@ -15,6 +18,8 @@ const ProductContent = (props) => {
   const [quantity, setQuantity] = useState(1)
   const [homeImg, setHomeImg] = useState(props.img)
   const [open, setOpen] = useState(false)
+  const dispatch = useDispatch()
+  const cartItems = useSelector(selectCartItems)
 
   const increment = () =>{
     setQuantity(quantity + 1)
@@ -28,7 +33,7 @@ const ProductContent = (props) => {
   const AddToCart = ()=>{
     setOpen(true)
     const product = {...props, quantity}
-    props.addToCart(product)
+    addToCart(cartItems, product, dispatch)
   }
 
   const handleClose = () =>{

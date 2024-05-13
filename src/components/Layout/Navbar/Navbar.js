@@ -1,15 +1,16 @@
-import React, {useContext, useEffect, useState} from 'react'
+import React, { useEffect, useState} from 'react'
 import './Navbar.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faCartShopping, faMagnifyingGlass, faUser} from '@fortawesome/free-solid-svg-icons'
 import { useNavigate, Link } from 'react-router-dom'
-import { CartContext } from '../../../context/CartContext'
+import { useSelector } from 'react-redux'
+import { selectTotalProducts } from '../../../features/cartSlice'
 
 const Navbar = ({cartStatus, setCartStatus}) => {
 
-  const {totalProducts} = useContext(CartContext)
   const navigate = useNavigate()
   const [scroll, setScroll] = useState(false)
+  const totalProducts = useSelector(selectTotalProducts)
 
  const handleScroll = ()=>{
     if(window.scrollY > 0) 

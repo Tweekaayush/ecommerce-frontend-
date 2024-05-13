@@ -1,16 +1,19 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import './Cart.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faXmark} from '@fortawesome/free-solid-svg-icons'
-import { CartContext } from '../../context/CartContext'
 import CartItem from '../CartItem/CartItem'
 import img from '../../assets/images/cart/empty-cart.png'
 import { useNavigate } from 'react-router-dom'
+import { selectCartItems, selectTotalPrice, selectTotalProducts } from '../../features/cartSlice'
+import { useSelector } from 'react-redux'
 
 const Cart = ({cartStatus, setCartStatus}) => {
 
   const navigate = useNavigate()
-  const {cartItems, totalPrice, totalProducts, removeFromCart} = useContext(CartContext)
+  const cartItems = useSelector(selectCartItems)
+  const totalPrice = useSelector(selectTotalPrice)
+  const totalProducts = useSelector(selectTotalProducts)
 
   const handleRedirect = () =>{
     setCartStatus(false)
@@ -36,7 +39,11 @@ const Cart = ({cartStatus, setCartStatus}) => {
               <div className="cart-item-list">
                 {
                   cartItems.map((item)=>{
-                    return <CartItem key={item.id} product={item} removeFromCart={removeFromCart} setCartStatus={setCartStatus}/>
+                    return <CartItem 
+                              key={item.id} 
+                              product={item} 
+                              setCartStatus={setCartStatus}
+                            />
                   })
                 }
               </div>
