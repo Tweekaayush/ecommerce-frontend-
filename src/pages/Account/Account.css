@@ -1,0 +1,132 @@
+.account-container{
+    display: flex;
+    flex-direction: column;
+    min-height: 90vh;
+}
+
+.profile-header{
+    background-color: var(--bg-color-2);
+    padding: 32px 16px;
+}
+
+.profile-content{
+    display: flex;
+    justify-content: center;
+    gap: 24px; 
+    padding: 64px 0;
+    min-height: 300px;
+}
+
+.profile-content-left{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    box-shadow: 1px 1px 20px var(--overlay-color-1);
+    border-radius: 10px;
+    padding: 16px;
+}
+
+.profile-content-left h1{
+    align-self: flex-start;
+    width: fit-content;
+}
+
+.profile-img{
+    width: 100%;
+    min-height: 300px;
+    border-radius: 10px;
+}
+
+.profile-img img{
+    border-radius: 10px;
+    width: 100%;
+}
+
+.profile-content-right{
+    flex: 2;
+    height: auto;
+    padding-left: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 20px var(--overlay-color-1);
+    padding: 16px;
+}
+
+.profile-content-right > div:first-child{
+    display: flex;
+    gap:8px;
+    align-items: center;
+    width: fit-content;
+    padding-bottom: 8px;
+    margin-bottom: 16px;
+}
+
+.profile-content-right svg{
+    font-size: 16px;
+}
+
+.profile-content-right h1{
+    color: var(--text-color-1);
+    font-size: 24px;
+    font-weight: 800;
+}
+
+.account-form{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.account-form label{
+    display: flex;
+    flex-direction: column;
+}
+
+.account-form label span{
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.account-form input{
+    width: 100%;
+    padding: 16px 12px;
+    font-size: 16px;
+    border-radius: 10px;
+    border: none;
+    background-color: var(--bg-color-2);
+    outline: none;
+}
+
+.account-form button{
+    align-self: flex-end;
+}
+
+@media screen and (max-width:768px) {
+    .profile-img{
+        max-width: 300px;
+        border-radius: 10px;
+        min-height: auto;
+    }
+    .profile-content{
+        flex-direction: column;
+    }
+    .profile-content-left{
+        flex-direction: row;
+    }
+}
+
+@media screen and (max-width:510px) {
+
+    .profile-img{
+        max-width: 100%;
+    }
+
+    .profile-content-left{
+        flex-direction: column;
+    }
+}

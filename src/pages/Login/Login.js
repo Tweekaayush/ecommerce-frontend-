@@ -2,15 +2,21 @@ import React, { useState, useEffect } from 'react'
 import './Login.css'
 import fb from '../../assets/svg/facebook.png'
 import g from '../../assets/svg/google.png'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faEnvelope, faKey} from '@fortawesome/free-solid-svg-icons'
 import { useLocation } from 'react-router-dom'
 import { Snackbar, Alert } from '@mui/material'
+import { auth, provider, signInWithPopup } from '../../config/firebase'
+import {useDispatch, useSelector} from 'react-redux'
+import { selectUserId, setUserLoginDetails } from '../../features/userSlice'
 
 const Login = () => {
 
-  const { pathname } = useLocation
+  const { pathname } = useLocation()
+  const dispatch = useDispatch()
+  const navigate = useNavigate('/')
+  const userId = useSelector(selectUserId)
   const [formData, setFormData] = useState({
     email: '',
     password: '',
@@ -71,9 +77,29 @@ const Login = () => {
     setOpen(false)
   }
 
+  const setUser = async(user) =>{
+    
+    dispatch(setUserLoginDetails({
+      uid: user.uid,
+      name: user.displayName,
+      email: user.email,
+      photo: user.photoURL,
+    }))
+    navigate('/')
+  }
+
+  const handleGoogleAuth = () =>{
+    signInWithPopup(auth, provider).then((res)=>{
+      setUser(res.user)
+    }).catch((e)=>console.log(e.message))
+  }
+
   useEffect(()=>{
     window.scrollTo(0, 0)
-  }, [pathname])
+    if(userId){
+      navigate('/account')
+    }
+  }, [pathname, userId])
 
   return (
     <section id="login">
@@ -83,12 +109,12 @@ const Login = () => {
             <h1 className='form-heading'>Login</h1>
             <div className="form-input">
               <FontAwesomeIcon icon={faEnvelope}/>
-              <input type="email" value={formData.email} name='email' onChange={handleChange} placeholder='Email' required/>
+              <input type="email" value={formData.email} name='email' onChange={handleChange} placeholder='Email'/>
             </div>
             <h6 className="validation-error-message">{validationError.email}</h6>
             <div className="form-input">
               <FontAwesomeIcon icon={faKey}/>
-              <input type="password" value={formData.password} name='password' onChange={handleChange} placeholder='Password' required/>
+              <input type="password" value={formData.password} name='password' onChange={handleChange} placeholder='Password'/>
             </div>
             <h6 className="validation-error-message">{validationError.password}</h6>
             <span>
@@ -98,14 +124,14 @@ const Login = () => {
             <input type="submit" value="Login" className='section-btn' />
             <p>Or login with</p>
             <div className="form-auth">
-              <a href='https://www.facebook.com' className="form-links">
+              {/* <div href='https://www.facebook.com' className="form-links" onClick={handleFacebookAuth}>
                 <img src={fb} alt="" />
                 <h3>Facebook</h3>
-              </a>
-              <a href='https://www.google.com' className="form-links">
+              </div> */}
+              <div href='https://www.google.com' className="form-links" onClick={handleGoogleAuth}>
                 <img src={g} alt="" />
                 <h3>Google</h3>
-              </a>
+              </div>
             </div>
             <p>Not a member? <Link to="/login">Sign up now</Link></p>
           </form>

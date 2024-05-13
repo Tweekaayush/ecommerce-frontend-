@@ -14,6 +14,7 @@
     justify-content: space-between;
     align-items: center;
     width: 1300px;
+    height: 100%;
 }
 
 .nav-brand{
@@ -28,6 +29,7 @@
     display: flex;
     list-style: none;
     gap: 24px;
+    height: 100%;
 }
 
 .nav-item{
@@ -37,31 +39,42 @@
     align-items: center;
     gap: 5px;
     cursor: pointer;
+    height: 100%;
 }
 
-.nav-item svg{
+.nav-item > svg{
     position: relative;
     font-size: 16px;
     color: var(--text-color-1);
 }
 
-.nav-item p{
+.nav-item > p{
     font-size: 16px;
     font-weight: 500;
     text-transform: uppercase;
     color: var(--text-color-1);
 }
 
-.nav-item span{
+.nav-item > span{
     position: absolute;
-    top: -22px;
-    right: 30px;
+    top: 10px;
+    right: 36px;
     font-size: 14px;
     background-color: var(--button-color-2);
     color: var(--white-color);
     text-align: center;
     padding: 5px 10px;
     border-radius: 50%;
+}
+
+.speedDial{
+    margin-top: 110px;
+}
+
+.speedDialIcon{
+    width: 100%;
+    height: 100%;
+    border-radius:100%;
 }
 
 @media screen and (max-width: 1200px) {
@@ -74,6 +87,11 @@
 }
 
 @media screen and (max-width:768px) {
+
+    .nav-links{
+        gap: 16px;
+    }
+
     .nav-item p{
         display: none;
     }
@@ -94,7 +112,7 @@
     box-shadow: var(--overlay-color-1) 0px 10px 10px -10px;
 }
 
-.scrolled .nav-container ul li svg, .scrolled .nav-container ul li p, .scrolled .nav-container .nav-brand{
+.scrolled .nav-container ul li > svg, .scrolled .nav-container ul li p, .scrolled .nav-container .nav-brand{
     color: var(--white-color);
 }
 
@@ -102,7 +120,7 @@
     display: block !important;
 }
 
-.scrolled .nav-item span{
+.scrolled .nav-item > span{
     background-color: var(--text-color-1);
     color: var(--white-color);
 }

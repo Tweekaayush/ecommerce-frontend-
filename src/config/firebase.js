@@ -1,5 +1,5 @@
 import {initializeApp} from 'firebase/app'
-import { getAuth, GoogleAuthProvider, signInWithPopup, onAuthStateChanged, signOut } from "firebase/auth";
+import { getAuth, GoogleAuthProvider, signInWithPopup, onAuthStateChanged, signOut, FacebookAuthProvider, updateProfile, updateEmail } from "firebase/auth";
 import {getStorage} from 'firebase/storage'
 import { getFirestore, getDocs, collection, setDoc, doc, getDoc } from "firebase/firestore";
 
@@ -17,7 +17,8 @@ const firebaseConfig = {
   const db = getFirestore(firebaseApp)
   const auth = getAuth(firebaseApp)
   const provider = new GoogleAuthProvider()
+  const fbProvider = new FacebookAuthProvider()
   const storage = getStorage(firebaseApp)
 
-  export {auth, provider, storage, signInWithPopup, onAuthStateChanged, signOut, getDocs, collection, setDoc, doc, getDoc}
+  export {auth, provider, storage, signInWithPopup, onAuthStateChanged, signOut, getDocs, collection, setDoc, doc, getDoc, fbProvider, updateEmail, updateProfile}
   export default db
